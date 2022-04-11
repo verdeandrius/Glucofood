@@ -1,21 +1,23 @@
 package com.amusset.glucofood.common.models
 
-import com.amusset.glucofood.common.enums.GlycemicIndex
-import com.amusset.glucofood.common.enums.GlycemicIndex.DEFAULT
 import java.util.*
 
+/**
+ * [Food] This object contains information related to the glucose behavior according to the food
+ * ingested. Each time when the food was eaten is created a GlucoseRecord with details about hours
+ * and glucose increment history if it is was took.
+ */
 data class Food(
+    val userId: String,
     val name: String,
-    val glucoseLogs: List<GlucoseLog> = arrayListOf(),
+    val glucoseRecord: List<GlucoseRecord> = arrayListOf(),
+    val calories: Int? = null,
     val id: String = UUID.randomUUID().toString(),
     val createdDate: Long = Date().time,
-    var modificationDate: Long = Date().time
+    var modificationDate: Long = createdDate
 ) {
-    var glucoseAverage: Double = 0.0
-    var glycemicIndexCategory: GlycemicIndex = DEFAULT
 
-    fun updateModificationDate(glucoseLog: GlucoseLog) {
-        modificationDate = glucoseLog.createdDate
+    fun updateModificationDate(glucoseRecord: GlucoseRecord) {
+        modificationDate = glucoseRecord.createdDate
     }
-
 }
