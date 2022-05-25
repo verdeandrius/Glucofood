@@ -13,11 +13,12 @@ import kotlin.math.roundToInt
 data class GlucoseRecord(
     val glucoseLogs: List<GlucoseLog>,
     val foodId: String,
+    val periodDay: String,
     val id: String = UUID.randomUUID().toString(),
     val createdDate: Long = Date().time,
     var incrementSpeed: Double? = null //TODO Pending method to get this value from glucoseLog
 ) {
-    var glucoseMeasure: Int = 0
+    var glucoseAverage: Int = 0
         get() {
         var sum = 0.0
         glucoseLogs.forEach { sum += it.measure }
