@@ -10,5 +10,7 @@ data class GlucoseLog(
     val measure: Int,
     val foodId: String,
     val id: String = UUID.randomUUID().toString(),
-    val createdDate: Long = Date().time
+    val createdDate: Long = Date().time,
+    val isTracked: Boolean = false,
+    var trackId: String? = null,
 )
