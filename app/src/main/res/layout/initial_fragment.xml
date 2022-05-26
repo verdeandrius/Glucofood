@@ -33,7 +33,7 @@
         android:id="@+id/tvEnterData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="16dp"
         android:text="Enter your data"
         android:textColor="@color/black"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -45,11 +45,12 @@
         android:id="@+id/tilName"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginStart="56dp"
         android:layout_marginEnd="56dp"
         android:layout_marginBottom="16dp"
         android:hint="Name"
+        app:counterMaxLength="20"
         app:layout_constraintBottom_toTopOf="@+id/tilGender"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -64,10 +65,11 @@
         android:id="@+id/tilGender"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginStart="56dp"
         android:layout_marginEnd="56dp"
         android:hint="Gender"
+        app:counterMaxLength="20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -83,11 +85,13 @@
         android:id="@+id/tilAge"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginStart="56dp"
         android:layout_marginEnd="56dp"
         android:layout_marginTop="16dp"
         android:hint="Age"
+        android:inputType="number"
+        app:counterMaxLength="2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tilGender">
@@ -100,14 +104,15 @@
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:layout_marginStart="64dp"
         android:layout_marginEnd="64dp"
         android:layout_marginTop="24dp"
         android:textAllCaps="false"
+        android:textStyle="bold"
         android:text="Create and Start!"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilAge" />
+        app:layout_constraintTop_toBottomOf="@+id/tilAge"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
