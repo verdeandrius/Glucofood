@@ -1,6 +1,5 @@
 package com.amusset.glucofood
 
-import com.amusset.glucofood.common.extensions.minutesToMillis
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -12,7 +11,7 @@ import org.junit.Assert.*
  */
 class ExampleUnitTest {
     @Test
-    fun minutesToMillis() {
-        assertEquals(300000, 5.minutesToMillis())
+    fun addition_isCorrect() {
+        assertEquals(4, 2 + 2)
     }
 }
