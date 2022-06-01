@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/teal_200"
-    tools:context=".home.view.HomeFragment">
+    tools:context=".records.view.RecordsFragment">
 
     <TextView
         android:layout_width="wrap_content"
@@ -13,7 +13,7 @@
         android:textSize="32sp"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:text="Home Fragment"
+        android:text="Records Fragment"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toTopOf="@id/btnOne"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,9 +23,19 @@
         android:id="@+id/btnOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Records"
+        android:text="Food Detail"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/btnOne"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 

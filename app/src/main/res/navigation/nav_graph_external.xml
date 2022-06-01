@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_external"
+    app:startDestination="@id/initialFragment">
+
+    <fragment
+        android:id="@+id/initialFragment"
+        android:name="com.amusset.glucofood.initial.view.InitialFragment"
+        android:label="initial_fragment"
+        tools:layout="@layout/initial_fragment" >
+        <action
+            android:id="@+id/action_initialFragment_to_nav_graph_internal"
+            app:destination="@id/nav_graph_internal"
+            app:popUpTo="@id/nav_graph_internal"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <include app:graph="@navigation/nav_graph_internal" />
+</navigation>

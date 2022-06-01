@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_internal"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.amusset.glucofood.home.view.HomeFragment"
+        android:label="home_fragment"
+        tools:layout="@layout/home_fragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_recordsFragment"
+            app:destination="@id/recordsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recordsFragment"
+        android:name="com.amusset.glucofood.records.view.RecordsFragment"
+        android:label="records_fragment"
+        tools:layout="@layout/records_fragment" >
+        <action
+            android:id="@+id/action_recordsFragment_to_foodDetailFragment"
+            app:destination="@id/foodDetailFragment" />
+        <action
+            android:id="@+id/action_recordsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodDetailFragment"
+        android:name="com.amusset.glucofood.fooddetail.view.FoodDetailFragment"
+        android:label="food_detail_fragment"
+        tools:layout="@layout/food_detail_fragment" >
+        <action
+            android:id="@+id/action_foodDetailFragment_to_recordsFragment"
+            app:destination="@id/recordsFragment" />
+    </fragment>
+</navigation>
