@@ -21,7 +21,7 @@ class TrackerFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.tracker_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_tracker, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

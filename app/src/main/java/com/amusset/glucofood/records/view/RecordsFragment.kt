@@ -7,12 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.amusset.glucofood.R
-import com.amusset.glucofood.databinding.RecordsFragmentBinding
+import com.amusset.glucofood.databinding.FragmentRecordsBinding
+import com.amusset.glucofood.internalhost.InternalHostActivity
 import com.amusset.glucofood.records.viewmodel.RecordsViewModel
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class RecordsFragment: Fragment(){
 
-    private lateinit var binding: RecordsFragmentBinding
+    private lateinit var binding: FragmentRecordsBinding
     private lateinit var viewModel: RecordsViewModel
 
     override fun onCreateView(
@@ -20,7 +22,11 @@ class RecordsFragment: Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View{
-        binding = RecordsFragmentBinding.inflate(inflater, container, false)
+        binding = FragmentRecordsBinding.inflate(inflater, container, false)
+
+        if(requireActivity().findViewById<FloatingActionButton>(R.id.btnFloating).visibility==View.GONE){
+            (requireActivity() as InternalHostActivity).showFloatingButton()
+        }
         return binding.root
     }
 
@@ -30,8 +36,8 @@ class RecordsFragment: Fragment(){
         binding.btnOne.setOnClickListener{
             findNavController().navigate(R.id.foodDetailFragment)
         }
-        binding.btnTwo.setOnClickListener{
-            findNavController().navigate(R.id.homeFragment)
+        (requireActivity() as InternalHostActivity).findViewById<FloatingActionButton>(R.id.btnFloating).setOnClickListener {
+            findNavController().navigate(R.id.createRecordFragment)
         }
     }
 }

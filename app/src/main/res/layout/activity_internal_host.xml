@@ -14,4 +14,13 @@
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_graph_internal" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnFloating"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:backgroundTint="#FF0000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

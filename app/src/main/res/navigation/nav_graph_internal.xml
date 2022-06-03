@@ -9,30 +9,39 @@
         android:id="@+id/homeFragment"
         android:name="com.amusset.glucofood.home.view.HomeFragment"
         android:label="home_fragment"
-        tools:layout="@layout/home_fragment" >
+        tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_recordsFragment"
             app:destination="@id/recordsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_createRecordFragment"
+            app:destination="@id/createRecordFragment" />
     </fragment>
     <fragment
         android:id="@+id/recordsFragment"
         android:name="com.amusset.glucofood.records.view.RecordsFragment"
         android:label="records_fragment"
-        tools:layout="@layout/records_fragment" >
+        tools:layout="@layout/fragment_records" >
         <action
             android:id="@+id/action_recordsFragment_to_foodDetailFragment"
             app:destination="@id/foodDetailFragment" />
         <action
-            android:id="@+id/action_recordsFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_recordsFragment_to_createRecordFragment"
+            app:destination="@id/createRecordFragment" />
     </fragment>
     <fragment
         android:id="@+id/foodDetailFragment"
         android:name="com.amusset.glucofood.fooddetail.view.FoodDetailFragment"
         android:label="food_detail_fragment"
-        tools:layout="@layout/food_detail_fragment" >
-        <action
-            android:id="@+id/action_foodDetailFragment_to_recordsFragment"
-            app:destination="@id/recordsFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_food_detail" />
+    <fragment
+        android:id="@+id/createRecordFragment"
+        android:name="com.amusset.glucofood.createrecord.view.CreateRecordFragment"
+        android:label="fragment_create_record"
+        tools:layout="@layout/fragment_create_record" />
+    <fragment
+        android:id="@+id/newUserFragment"
+        android:name="com.amusset.glucofood.newuser.view.NewUserFragment"
+        android:label="fragment_new_user"
+        tools:layout="@layout/fragment_new_user" />
 </navigation>

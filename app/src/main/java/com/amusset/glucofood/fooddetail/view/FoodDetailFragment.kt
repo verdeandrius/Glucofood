@@ -5,14 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.amusset.glucofood.R
-import com.amusset.glucofood.databinding.FoodDetailFragmentBinding
+import com.amusset.glucofood.databinding.FragmentFoodDetailBinding
 import com.amusset.glucofood.fooddetail.viewmodel.FoodDetailViewModel
+import com.amusset.glucofood.internalhost.InternalHostActivity
 
 class FoodDetailFragment: Fragment() {
 
-    private lateinit var binding: FoodDetailFragmentBinding
+    private lateinit var binding: FragmentFoodDetailBinding
     private lateinit var viewModel: FoodDetailViewModel
 
     override fun onCreateView(
@@ -20,15 +19,12 @@ class FoodDetailFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FoodDetailFragmentBinding.inflate(inflater, container, false)
+        binding = FragmentFoodDetailBinding.inflate(inflater, container, false)
+        (requireActivity() as InternalHostActivity).hideFloatingButton()
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding.btnOne.setOnClickListener{
-            findNavController().navigate(R.id.recordsFragment)
-        }
     }
 }

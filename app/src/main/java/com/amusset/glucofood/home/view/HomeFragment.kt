@@ -7,12 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.amusset.glucofood.R
-import com.amusset.glucofood.databinding.HomeFragmentBinding
+import com.amusset.glucofood.databinding.FragmentHomeBinding
 import com.amusset.glucofood.home.viewmodel.HomeViewModel
+import com.amusset.glucofood.internalhost.InternalHostActivity
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class HomeFragment : Fragment(){
 
-    private lateinit var binding: HomeFragmentBinding
+    private lateinit var binding: FragmentHomeBinding
     private lateinit var viewModel: HomeViewModel
 
     override fun onCreateView(
@@ -20,7 +22,7 @@ class HomeFragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View{
-        binding = HomeFragmentBinding.inflate(inflater, container, false)
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -29,6 +31,9 @@ class HomeFragment : Fragment(){
 
         binding.btnOne.setOnClickListener{
             findNavController().navigate(R.id.recordsFragment)
+        }
+        (requireActivity() as InternalHostActivity).findViewById<FloatingActionButton>(R.id.btnFloating).setOnClickListener {
+            findNavController().navigate(R.id.createRecordFragment)
         }
     }
 }
