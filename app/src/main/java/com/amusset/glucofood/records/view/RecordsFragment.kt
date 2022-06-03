@@ -1,28 +1,32 @@
-package com.amusset.glucofood.home.view
+package com.amusset.glucofood.records.view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.amusset.glucofood.R
-import com.amusset.glucofood.databinding.FragmentHomeBinding
-import com.amusset.glucofood.home.viewmodel.HomeViewModel
+import com.amusset.glucofood.databinding.FragmentRecordsBinding
 import com.amusset.glucofood.internalhost.InternalHostActivity
+import com.amusset.glucofood.records.viewmodel.RecordsViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class HomeFragment : Fragment(){
+class RecordsFragment: Fragment(){
 
-    private lateinit var binding: FragmentHomeBinding
-    private lateinit var viewModel: HomeViewModel
+    private lateinit var binding: FragmentRecordsBinding
+    private lateinit var viewModel: RecordsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View{
-        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        binding = FragmentRecordsBinding.inflate(inflater, container, false)
+
+        if(requireActivity().findViewById<FloatingActionButton>(R.id.btnFloating).visibility==View.GONE){
+            (requireActivity() as InternalHostActivity).showFloatingButton()
+        }
         return binding.root
     }
 
@@ -30,7 +34,7 @@ class HomeFragment : Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnOne.setOnClickListener{
-            findNavController().navigate(R.id.recordsFragment)
+            findNavController().navigate(R.id.foodDetailFragment)
         }
         (requireActivity() as InternalHostActivity).findViewById<FloatingActionButton>(R.id.btnFloating).setOnClickListener {
             findNavController().navigate(R.id.createRecordFragment)

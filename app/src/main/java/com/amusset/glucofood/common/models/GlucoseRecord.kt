@@ -24,7 +24,7 @@ data class GlucoseRecord(
         glucoseLogs.forEach { sum += it.measure }
         return sum.div(glucoseLogs.size).roundToInt()
     }
-    val glycemicIndexCategory: GlycemicIndex get() {
+/*    val glycemicIndexCategory: GlycemicIndex get() {
         return when {
             LOW.range.contains(glucoseMeasure) -> {
                 LOW
@@ -37,7 +37,5 @@ data class GlucoseRecord(
             }
             else -> {
                 DEFAULT
-            }
+            }*/
         }
-    }
-}
