@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.amusset.glucofood.R
 import com.amusset.glucofood.databinding.FragmentNewUserBinding
 import com.amusset.glucofood.internalhost.InternalHostActivity
@@ -22,5 +23,13 @@ class NewUserFragment : Fragment(){
         binding = FragmentNewUserBinding.inflate(inflater, container, false)
         (requireActivity() as InternalHostActivity).hideFloatingButton()
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.btnCreateLog.setOnClickListener {
+            findNavController().navigate(R.id.createRecordFragment)
+        }
     }
 }

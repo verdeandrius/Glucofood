@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_homeFragment_to_createRecordFragment"
             app:destination="@id/createRecordFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_newUserFragment"
+            app:destination="@id/newUserFragment" />
     </fragment>
     <fragment
         android:id="@+id/recordsFragment"

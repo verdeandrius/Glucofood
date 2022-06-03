@@ -32,6 +32,9 @@ class HomeFragment : Fragment(){
         binding.btnOne.setOnClickListener{
             findNavController().navigate(R.id.recordsFragment)
         }
+        binding.btnTwo.setOnClickListener{
+            findNavController().navigate(R.id.newUserFragment)
+        }
         (requireActivity() as InternalHostActivity).findViewById<FloatingActionButton>(R.id.btnFloating).setOnClickListener {
             findNavController().navigate(R.id.createRecordFragment)
         }
