@@ -4,19 +4,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".newuser.view.NewUserFragment"
-    android:background="@color/teal_200">
+    tools:context=".newuser.view.NewUserFragment">
 
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:text="New User Fragment"
+        android:src="@drawable/ic_needle"
         android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/tvNewUser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvNewUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        style="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="@string/new_user_text"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCreateLog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:layout_marginStart="48dp"
+        android:text="Create"
+        android:textAllCaps="false"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/tvNewUser"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
