@@ -29,12 +29,32 @@ class HomeFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnOne.setOnClickListener{
+        //Food Records
+
+        binding.HealthyRightChevron.setOnClickListener {
+            findNavController().navigate(R.id.recordsFragment)
+        }
+        binding.BeCarefulRightChevron.setOnClickListener {
+            findNavController().navigate(R.id.recordsFragment)
+        }
+        binding.WarningRightChevron.setOnClickListener {
+            findNavController().navigate(R.id.recordsFragment)
+        }
+        binding.FoodsRightChevron.setOnClickListener {
+            findNavController().navigate(R.id.recordsFragment)
+        }
+
+        //Test Buttons
+
+/*        binding.btnOne.setOnClickListener{
             findNavController().navigate(R.id.recordsFragment)
         }
         binding.btnTwo.setOnClickListener{
             findNavController().navigate(R.id.newUserFragment)
-        }
+        }*/
+
+        //Floating Button to Create Record
+
         (requireActivity() as InternalHostActivity).findViewById<FloatingActionButton>(R.id.btnFloating).setOnClickListener {
             findNavController().navigate(R.id.createRecordFragment)
         }

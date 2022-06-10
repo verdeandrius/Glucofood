@@ -33,9 +33,10 @@ class RecordsFragment: Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnOne.setOnClickListener{
+/*        binding.btnOne.setOnClickListener{
             findNavController().navigate(R.id.foodDetailFragment)
-        }
+        }*/
+
         (requireActivity() as InternalHostActivity).findViewById<FloatingActionButton>(R.id.btnFloating).setOnClickListener {
             findNavController().navigate(R.id.createRecordFragment)
         }
