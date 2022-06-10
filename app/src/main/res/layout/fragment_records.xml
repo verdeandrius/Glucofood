@@ -58,7 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:orientation="vertical"
-            android:background="@drawable/gradients"
+            android:background="@drawable/gradient_warning"
             app:layout_constraintTop_toBottomOf="@id/tophalf"/>
 
     <LinearLayout
