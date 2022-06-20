@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fooddetail.view.FoodDetailFragment">
+    tools:context=".foodlist.view.FoodListFragment">
 
     <LinearLayout
         android:id="@+id/tophalf"
@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginBottom="32dp"
-                android:text="Food"
+                android:text="Foods Recorded"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -68,7 +68,7 @@
                 android:layout_marginBottom="8dp"
                 android:textStyle="bold"
                 style="@style/TextAppearance.AppCompat.Medium"
-                android:text="Records by Period"
+                android:text="Foods"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toTopOf="@id/rvItemList"/>
@@ -78,7 +78,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="24dp"
                 android:orientation="vertical"
-                tools:listitem="@layout/food_detail_item"/>
+                tools:listitem="@layout/food_item"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>

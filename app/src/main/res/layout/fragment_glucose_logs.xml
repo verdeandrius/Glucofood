@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fooddetail.view.FoodDetailFragment">
+    tools:context=".glucoselogs.view.GlucoseLogsFragment">
 
     <LinearLayout
         android:id="@+id/tophalf"
@@ -17,6 +17,14 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_night_medium"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
             <ImageView
                 android:id="@+id/BackArrow"
@@ -34,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginBottom="32dp"
-                android:text="Food"
+                android:text="Food Name"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -57,7 +65,6 @@
         android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/tophalf"
         app:layout_constraintBottom_toBottomOf="parent">
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -68,7 +75,7 @@
                 android:layout_marginBottom="8dp"
                 android:textStyle="bold"
                 style="@style/TextAppearance.AppCompat.Medium"
-                android:text="Records by Period"
+                android:text="Logs"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toTopOf="@id/rvItemList"/>
@@ -78,7 +85,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="24dp"
                 android:orientation="vertical"
-                tools:listitem="@layout/food_detail_item"/>
+                tools:listitem="@layout/log_item"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
